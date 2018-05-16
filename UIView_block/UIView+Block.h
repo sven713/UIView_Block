@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (Block)
+- (void)tapActionWithBlock:(void(^)(void))block;
 
 @end

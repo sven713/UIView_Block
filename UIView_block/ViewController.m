@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIView+Block.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setUI];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUI {
+    UIView *testView = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [self.view addSubview:testView];
+    testView.backgroundColor = [UIColor orangeColor];
+    [testView tapActionWithBlock:^{
+        NSLog(@"点击了testView");
+    }];
 }
-
 
 @end
